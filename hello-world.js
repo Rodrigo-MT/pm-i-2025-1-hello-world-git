@@ -14,9 +14,8 @@ nameInput.addEventListener('keypress', (event) => {
 
 // Limpa o campo ao pressionar ESC
 nameInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') { // Tecla ESC
-        nameInput.value = ''; // Limpa o input
-        messageP.innerText = ''; // Limpa a mensagem (opcional)
+    if (event.key === 'Escape') {
+        clearInput(); // Chama a função de limpar
     }
 });
 
@@ -27,6 +26,13 @@ nameInput.onkeyup = (event) => {
     }
 };
 
+// Exibe "Hello World, [nome]!"
 const helloWorld = () => {
     messageP.innerText = `Hello World, ${nameInput.value}!`;
+};
+
+// Limpa o input e a mensagem
+const clearInput = () => {
+    nameInput.value = ''; // Limpa o campo de texto
+    messageP.innerText = ''; // Limpa a mensagem
 };
