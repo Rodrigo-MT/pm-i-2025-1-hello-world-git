@@ -12,6 +12,14 @@ nameInput.addEventListener('keypress', (event) => {
     }
 });
 
+// Limpa o campo ao pressionar ESC
+nameInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') { // Tecla ESC
+        nameInput.value = ''; // Limpa o input
+        messageP.innerText = ''; // Limpa a mensagem (opcional)
+    }
+});
+
 // Limpa a mensagem se o campo estiver vazio (opcional)
 nameInput.onkeyup = (event) => {
     if (nameInput.value === '') {
